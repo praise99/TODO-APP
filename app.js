@@ -22,12 +22,43 @@ function addTodo(event){
 
     //create li
     const newTodo=document.createElement("li");
+
+   const limitRecipeTitle = (title, limit = 27) => {
+    const newTitle = [];
+    if (title.length > limit) {
+        title.split(' ').reduce((acc, cur) => {
+            if (acc + cur.length <= limit) {
+                newTitle.push(cur);
+            }
+            return acc + cur.length;
+        }, 0);
+
+        // return the result
+        return `${newTitle.join(' ')} ...`;
+    }
+    return title;
+}
+const filterResult=()=>{
+  if (limitRecipeTitle(todoInput.value) === ' ...'){
     newTodo.innerText=todoInput.value;
+  }else{
+    newTodo.innerText=limitRecipeTitle(todoInput.value);
+  }
+}
+    filterResult();
+    //newTodo.innerText=limitRecipeTitle(todoInput.value);
     newTodo.classList.add("todo-item");
     todoDiv.appendChild(newTodo);
+    
+    
 
     //ADD todo to local storage
-    saveLocalTodos(todoInput.value)
+    if (limitRecipeTitle(todoInput.value) === ' ...'){
+      saveLocalTodos(todoInput.value);
+    }else{
+      saveLocalTodos(limitRecipeTitle(todoInput.value));
+    }
+    //saveLocalTodos(limitRecipeTitle(todoInput.value))
 
     //checkmark button
     const completedButton=document.createElement("button");

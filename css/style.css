@@ -166,7 +166,7 @@ select {
 
 @media (max-width: 399.98px) {
   .top {
-    width: 300px;
+    width: 320px;
   }
   .todo-list {
     min-width: 40%;
