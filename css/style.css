@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  height: 100vh;
+}
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  margin: auto;
+  padding: 5rem 0rem;
+  animation: appearPage 3s;
+  animation-timing-function: ease-out;
+}
+.content {
+  background-color: rgb(63, 81, 181);
+  height: 40vh;
+}
+.name {
+  color: white;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.input-list {
+  padding: 0.6rem;
+  width: 400px;
+  outline: none;
+  border: 2px solid rgb(63, 81, 181);
+}
+.tick {
+  cursor: pointer;
+}
+.todo-container {
+  background-color: rgb(60, 61, 107);
+  padding: 7rem 0rem 19rem 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todo-list {
+  min-width: 20%;
+  list-style: none;
+  color: rgb(60, 61, 107);
+  margin: -5rem 0rem;
+  animation: appearList 3s;
+  animation-delay: 2s;
+  animation-fill-mode: backwards;
+  animation-timing-function: ease-out;
+}
+.todo {
+  margin: 0.5rem;
+  background-color: white;
+  color: black;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+}
+.todo li {
+  flex: 1;
+}
+.thrash-btn,
+.complete-btn {
+  background-color: #ff6f47;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.complete-btn {
+  background-color: rgb(73, 204, 73);
+}
+.todo-item {
+  padding: 0 0.7rem;
+  font-size: 0.9rem;
+}
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.fall {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+/*ANIMATIONS*/
+@keyframes appearPage {
+  0% {
+    opacity: 0;
+    transform: translateX(300px) rotateX(180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes appearList {
+  0% {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/*CUSTOM SELECTOR */
+
+/*CUSTOM SELECTOR */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+}
+/* Custom Select */
+.select {
+  margin: 0.4rem;
+  position: relative;
+  overflow: hidden;
+}
+select {
+  color: rgb(60, 61, 107);
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  width: 7.5rem;
+  padding: 0.5rem;
+}
+/* Arrow */
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 3px;
+  right: 0;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+/* Transition */
+
+.select:hover::after {
+  transform: scale(1.4);
+}
+
+@media (max-width: 399.98px) {
+  .top {
+    width: 300px;
+  }
+  .todo-list {
+    min-width: 40%;
+  }
+}
+@media (min-width: 399.99px) and (max-width: 480.98px) {
+  .top {
+    width: 400px;
+  }
+  .todo-list {
+    min-width: 40%;
+  }
+}
+@media (min-width: 481px) and (max-width: 767.98px) {
+  .top {
+    width: 450px;
+  }
+  .todo-list {
+    min-width: 40%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023.98px) {
+}
+@media (min-width: 1024px) and (max-width: 1199.98px) {
+}
