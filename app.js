@@ -15,7 +15,8 @@ filterOption.addEventListener("click",filterTodo);
 function addTodo(event){
     event.preventDefault();
 
-    //creating TODO DIV
+   if(todoInput.value !==""){
+      //creating TODO DIV
     const todoDiv=document.createElement("div");
     todoDiv.classList.add("todo");
 
@@ -44,6 +45,7 @@ function addTodo(event){
     todoList.appendChild(todoDiv);
     //clear input field
     todoInput.value="";
+   }
 }
 
 function deleteCheck(e){
